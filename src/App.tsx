@@ -61,6 +61,7 @@ function App() {
 	return (
 		<div className='page-wrapper'>
 			<Form
+			isLoading={isFetching}
 			isError={isError}
 				{...formState}
 				setFormState={setFormState}

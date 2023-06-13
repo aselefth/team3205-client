@@ -12,6 +12,7 @@ interface FormProps extends FormState {
 	setFormState: Dispatch<SetStateAction<FormState>>;
 	submit: (e: FormEvent<HTMLFormElement>) => void;
 	isError: boolean;
+	isLoading: boolean;
 }
 
 export function Form({
@@ -19,7 +20,8 @@ export function Form({
 	number,
 	setFormState,
 	submit,
-	isError
+	isError,
+	isLoading
 }: FormProps) {
 	const phoneRef = useRef<HTMLInputElement>(null);
 	function changeEmail(e: ChangeEvent<HTMLInputElement>) {
@@ -49,7 +51,7 @@ export function Form({
 				maxLength={8}
             
 			/>
-			<button type='submit'>submit</button>
+			<button type='submit' disabled={isLoading}>submit</button>
 		</form>
 	);
 }
