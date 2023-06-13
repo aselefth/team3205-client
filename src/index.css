@@ -1,0 +1,119 @@
+:root {
+  color-scheme: dark;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
+.page-wrapper {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: .5rem;
+  place-items: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .75rem;
+  gap: .5rem;
+  border-bottom: 1px solid white;
+
+  > button {
+    cursor: pointer;
+  }
+  
+  > button, > input {
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    padding: .5rem .75rem;
+    transition: .15s all;
+
+    &:focus, &:active, &:hover {
+      box-shadow: 0 0 10px rgba(255 255 255 /.5);
+    }
+  }
+}
+
+.users-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.user {
+  padding: .25rem;
+  cursor: pointer;
+  border-radius: .25rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: auto 200px;
+  column-gap: .75rem;
+  font-size: 1.2rem;
+  transition: .15s all;
+
+  > span {
+    color: rgb(200 200 200);
+  }
+
+  &:hover {
+    background-color: rgb(35 35 35);
+  }
+}
+
+.user-skeleton {
+  padding: .25rem;
+  border-radius: .25rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: auto 200px;
+  gap: .75rem;
+  font-size: 1.2rem;
+
+  > p {
+    width: 200px;
+    height: 15px;
+    border-radius: .2rem;
+    background-color: gray;
+    animation: skeleton 1.5s infinite;
+  }
+  > span {
+    width: 100px;
+    height: 15px;
+    border-radius: .2rem;
+    background-color: gray;
+    animation: skeleton 1.5s infinite;
+  }
+}
+
+@keyframes skeleton {
+  0% { 
+    background-color: gray;
+  }
+  50% {
+    background-color: rgb(96, 96, 96);
+  }
+  
+  100% {
+    background-color: gray;
+  }
+}
+
+.error {
+  background-color: rgb(74, 2, 2);
+}
