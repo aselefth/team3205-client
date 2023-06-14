@@ -21,7 +21,6 @@ export function Form({
 	setFormState,
 	submit,
 	isError,
-	isLoading
 }: FormProps) {
 	const phoneRef = useRef<HTMLInputElement>(null);
 	function changeEmail(e: ChangeEvent<HTMLInputElement>) {
@@ -51,7 +50,7 @@ export function Form({
 				maxLength={8}
             
 			/>
-			<button type='submit' disabled={isLoading}>submit</button>
+			<button type='submit'>submit</button>
 		</form>
 	);
 }
