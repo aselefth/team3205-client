@@ -6,7 +6,7 @@ interface Props {
 }
 
 export async function getNewUsers({ queryStr, abortController }: Props): Promise<{users: UserType[]}> {
-	const res = await fetch(`http://localhost:3001/users${queryStr}`, {
+	const res = await fetch(`http://localhost:3001/users?${queryStr}`, {
 		mode: 'cors',
 		signal: abortController.signal
 	});
